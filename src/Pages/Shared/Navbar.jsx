@@ -28,7 +28,7 @@ const Navbar = () => {
             </div>
             <div className="navbar-end">
                 <p>phofile photo</p>
-                <Link className="btn btn-primary">Login</Link>
+                <Link to="/login" className="btn btn-primary">Login</Link>
             </div>
         </div>
     );
