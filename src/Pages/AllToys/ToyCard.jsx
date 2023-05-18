@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const ToyCard = ({toy}) => {
-    const {_id, toyName, category, price, availableQuantity, picture} = toy || "";
+const ToyCard = ({ toy }) => {
+    const { _id, toyName, category, price, availableQuantity, picture } = toy || "";
     return (
-        <div className="card w-96 bg-base-100 shadow-xl">
-            <figure className="px-10 pt-10">
+        <div className="card bg-base-100 shadow-xl">
+            <figure>
                 <img src={picture} alt="toy" className="rounded-xl" />
             </figure>
             <div className="card-body items-center text-center">
@@ -13,7 +14,9 @@ const ToyCard = ({toy}) => {
                 <p>Price: {price} $</p>
                 <p>Available Quantity: {availableQuantity}</p>
                 <div className="card-actions">
-                    <button className="btn btn-primary">Buy Now</button>
+                    <Link to={`/toy/${_id}`}>
+                        <button className="btn btn-primary">View Details</button>
+                    </Link>
                 </div>
             </div>
         </div>

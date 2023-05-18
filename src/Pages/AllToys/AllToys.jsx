@@ -1,14 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import ToyCard from './toyCard';
+import { useLoaderData } from 'react-router-dom';
 
 const AllToys = () => {
-    const [allToys, setAddToys] = useState([]);
-    useEffect(()=> {
-        fetch('https://toy-trove-server.vercel.app/allToys')
-            .then(res => res.json())
-            .then(data => setAddToys(data))
-    } ,[]) 
-    console.log(allToys)
+    const allToys = useLoaderData();
+ 
 
     return (
         <div>
