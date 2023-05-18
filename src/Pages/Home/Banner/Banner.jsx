@@ -43,7 +43,7 @@ const Banner = () => {
             className="mySwiper"
         >
             {banners.map((banner) => (
-                <SwiperSlide>
+                <SwiperSlide key={banner.id}>
                     <SingleBanner key={banner.id} banner={banner}></SingleBanner>
                 </SwiperSlide>
             ))}

@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
 import logo from "/toy-trove.png"
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const Navbar = () => {
+    const { user } = useContext(AuthContext);
+
     const navItems = <>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/allToys">All Toys</Link></li>
@@ -26,9 +30,29 @@ const Navbar = () => {
                     {navItems}
                 </ul>
             </div>
-            <div className="navbar-end">
-                <p>phofile photo</p>
-                <Link to="/login" className="btn btn-primary">Login</Link>
+
+            <div className=" md:mr-10 mr-3 ml-auto">
+
+                {user ? (
+                    <>
+                        {user.photoURL && (
+                            <img title={user.displayName}
+                                className="h-12 rounded-full border-2 border-primary"
+                                src={user?.photoURL}
+                                alt=""
+                            />
+                        )}
+                        <button className="ml-5 btn btn-primary">
+                            Logout
+                        </button>
+                    </>
+                ) : (
+                    <Link to="/login">
+                        <button className="btn btn-primary">Login</button>
+                    </Link>
+                )}
+
+
             </div>
         </div>
     );

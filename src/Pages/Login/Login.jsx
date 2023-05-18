@@ -1,7 +1,12 @@
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 
 const Login = () => {
+    const {haneleLogIn} = useContext(AuthContext);
+    const [error, setError] = useState('');
+    const [success, setSuccess] = useState('');
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -9,6 +14,15 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
 
+        haneleLogIn(email, password)
+        .then((result) => {
+            const loggedUser = result.user;
+            console.log(loggedUser);
+            event.target.reset();
+            setSuccess("User Login successfully");
+            toast.success("User Login successfully");
+          })
+          .catch((error) => setError(error.message));
         console.log(email, password)
     }
 
@@ -56,6 +70,10 @@ const Login = () => {
                     >
                         Register
                     </Link>
+                </div>
+                <div className='mt-4'>
+                    <p className='text-red-400 text-center'>{error}</p>
+                    <p className='text-green-400 text-center' >{success}</p>
                 </div>
             </div>
         </div>

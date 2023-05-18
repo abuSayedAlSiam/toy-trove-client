@@ -16,7 +16,7 @@ const AuthProvider = ({ children }) => {
         return createUserWithEmailAndPassword(auth, email, password);
     }
 
-    const logIn = (email, password) => {
+    const haneleLogIn = (email, password) => {
         setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
     }
@@ -46,7 +46,7 @@ const AuthProvider = ({ children }) => {
         user,
         loading,
         createUser, 
-        logIn, 
+        haneleLogIn, 
         googleSignIn,
         logOut
     }

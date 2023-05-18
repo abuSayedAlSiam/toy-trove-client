@@ -1,22 +1,52 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../src/Providers/AuthProvider';
+import { toast } from 'react-toastify';
+import { updateProfile } from 'firebase/auth';
 
-const handleSignUp = event => {
-    event.preventDefault();
+
+
+const Register = () => {
+    const {createUser} = useContext(AuthContext)
+    const [error, setError] = useState('');
+    const [success, setSuccess] = useState('');
+
+    const handleSignUp = event => {
+        setError('')
+        setSuccess('')
+        event.preventDefault();
         const form = event.target;
         const name = form.name.value;
         const email = form.email.value;
+        const photoUrl = form.photoUrl.value;
         const password = form.password.value;
-        console.log(name, email, password)
+        console.log(name, email, password, photoUrl)
 
-
-}
-
-const Register = () => {
+        createUser(email, password)
+        .then((result) => {
+            const createdUser = result.user;
+    
+            updateProfile(createdUser, {
+              displayName: name,
+              photoURL: photoUrl,
+            });
+          
+    
+            event.target.reset();
+            setSuccess("User has created successfully");
+            toast.success("User has created successfully!");
+          })
+          .catch((error) => {
+            setError(error.message);
+            toast.error(error.message)
+          });
+            
+    
+    }
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
             <div className="max-w-md w-full p-6 bg-white rounded-md shadow">
-                <h1 className="text-2xl font-semibold mb-6">Login</h1>
+                <h1 className="text-2xl font-semibold mb-6">Register</h1>
                 <form onSubmit={handleSignUp}>
                     <div className="mb-4">
                         <label
@@ -28,6 +58,18 @@ const Register = () => {
                               className="input input-primary w-full"
                             type="text"
                             name="name"
+                        />
+                    </div>
+                    <div className="mb-4">
+                        <label
+                            className="block text-gray-700 text-sm font-bold mb-2"
+                        >
+                            Photo Url
+                        </label>
+                        <input
+                              className="input input-primary w-full"
+                            type="text"
+                            name="photoUrl"
                         />
                     </div>
                     <div className="mb-4">
@@ -62,13 +104,17 @@ const Register = () => {
                     </button>
                 </form>
                 <div className="mt-4 text-center">
-                    <span className="text-gray-600">Already have an account?</span>
+                    <span className="text-gray-600">Already have an account? </span>
                     <Link
                         className=" text-blue-500 font-semibold hover:underline "
                         to="/login"
                     >
-                        Sign up
+                         Login
                     </Link>
+                </div>
+                <div className='mt-4'>
+                    <p className='text-red-400 text-center'>{error}</p>
+                    <p className='text-green-400 text-center' >{success}</p>
                 </div>
             </div>
         </div>
