@@ -1,0 +1,101 @@
+[
+    {
+        "toyName": "Iron Man",
+        "picture": "https://example.com/marvel-legends-ironman.jpg",
+        "price": 39.99,
+        "rating": 4.7,
+        "subCategory": "Avengers",
+        "availableQuantity": 8,
+        "sellerName": "Superhero Collectibles",
+        "sellerEmail": "info@superherocollectibles.com",
+        "details": "This Marvel Legends Iron Man action figure is highly detailed and features multiple points of articulation. It comes with interchangeable hands, blast effects, and a display stand. Perfect for Marvel fans and collectors."
+      },
+      {
+        "toyName": "Spider-Man",
+        "picture": "https://example.com/spiderman-web-slinger.jpg",
+        "price": 19.99,
+        "rating": 4.5,
+        "subCategory": "Avengers",
+        "availableQuantity": 10,
+        "sellerName": "Superhero Store",
+        "sellerEmail": "info@superherostore.com",
+        "details": "This Spider-Man Web-Slinger action figure allows kids to recreate Spider-Man's adventures. It features a web-slinging mechanism, articulated limbs, and includes additional web accessories. Get ready for action-packed playtime!"
+      },
+      {
+        "toyName": "Batman",
+        "picture": "https://example.com/batman-deluxe.jpg",
+        "price": 29.99,
+        "rating": 4.7,
+        "subCategory": "Avengers",
+        "availableQuantity": 8,
+        "sellerName": "Gotham Toys",
+        "sellerEmail": "sales@gothamtoys.com",
+        "details": "This Batman Deluxe action figure is perfect for fans of the Dark Knight. It features a highly detailed costume, multiple points of articulation, and comes with various accessories such as a Batarang and a grappling hook. Get ready to protect Gotham City!"
+      },
+      {
+        "toyName": "Optimus Prime",
+        "picture": "https://example.com/optimus-prime.jpg",
+        "price": 49.99,
+        "rating": 4.9,
+        "subCategory": "Transformers",
+        "availableQuantity": 6,
+        "sellerName": "RoboToys",
+        "sellerEmail": "sales@robotoys.com",
+        "details": "Optimus Prime is the fearless leader of the Autobots. This transforming truck action figure features intricate detailing, lights, and sound effects. It can transform from a truck into a powerful robot, ready to battle the Decepticons."
+      },
+      {
+        "toyName": "Bumblebee Blitz",
+        "picture": "https://example.com/bumblebee-blitz.jpg",
+        "price": 39.99,
+        "rating": 4.7,
+        "subCategory": "Transformers",
+        "availableQuantity": 8,
+        "sellerName": "Transformers Universe",
+        "sellerEmail": "info@transformersuniverse.com",
+        "details": "Bumblebee Blitz is a speedy and agile Autobot. This transforming truck action figure features sleek design, a blaster weapon, and a cool color scheme. It can transform from a truck into a quick-footed robot, ready to outmaneuver the Decepticons."
+      },
+      {
+        "toyName": "Megatron Thunderstrike",
+        "picture": "https://example.com/megatron-thunderstrike.jpg",
+        "price": 59.99,
+        "rating": 4.8,
+        "subCategory": "Transformers",
+        "availableQuantity": 4,
+        "sellerName": "Decepticon Emporium",
+        "sellerEmail": "sales@decepticonemporium.com",
+        "details": "Megatron Thunderstrike is the powerful leader of the Decepticons. This transforming truck action figure features a menacing appearance, a fusion cannon weapon, and battle armor. It can transform from a truck into a formidable robot, ready to conquer the Autobots."
+      },
+      {
+        "toyName": "Millennium Falcon",
+        "picture": "https://example.com/millennium-falcon.jpg",
+        "price": 99.99,
+        "rating": 4.9,
+        "subCategory": "Star Wars",
+        "availableQuantity": 3,
+        "sellerName": "Galactic Toys",
+        "sellerEmail": "sales@galactictoys.com",
+        "details": "The Millennium Falcon is the iconic spaceship piloted by Han Solo and Chewbacca. This toy replica features intricate detailing, removable panels, and sound effects. It comes with Han Solo and Chewbacca action figures for immersive play."
+      },
+      {
+        "toyName": "X-Wing Starfighter",
+        "picture": "https://example.com/x-wing-starfighter.jpg",
+        "price": 79.99,
+        "rating": 4.7,
+        "subCategory": "Star Wars",
+        "availableQuantity": 5,
+        "sellerName": "Rebel Toys",
+        "sellerEmail": "info@rebeltoys.com",
+        "details": "The X-Wing Starfighter is a versatile starfighter used by the Rebel Alliance. This toy replica features adjustable wings, firing blasters, and an R2-D2 astromech droid. It comes with a Rebel pilot action figure for epic space battles."
+      },
+      {
+        "toyName": "Lightsaber Fury",
+        "picture": "https://example.com/lightsaber-fury.jpg",
+        "price": 49.99,
+        "rating": 4.8,
+        "subCategory": "Star Wars",
+        "availableQuantity": 7,
+        "sellerName": "Jedi Emporium",
+        "sellerEmail": "sales@jediemporium.com",
+        "details": "The Lightsaber Fury is a powerful lightsaber wielded by skilled Jedi Knights. This toy replica features a glowing blade, realistic sound effects, and a detachable hilt. It provides an authentic lightsaber experience for aspiring Jedi warriors."
+      }      
+]
