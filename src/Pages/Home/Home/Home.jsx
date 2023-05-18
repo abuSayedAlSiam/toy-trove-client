@@ -1,9 +1,14 @@
+import Banner from "../Banner/Banner";
+import Gallery from "../Gallery/Gallery";
+import ShopByCategory from "../ShopByCategory/ShopByCategory";
 
 
 const Home = () => {
     return (
         <div>
-            <h2 className="text-2xl font bold">this is home</h2>
+            <Banner></Banner>
+            <Gallery></Gallery>
+            <ShopByCategory></ShopByCategory>
         </div>
     );
 };

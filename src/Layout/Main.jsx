@@ -7,7 +7,6 @@ const Main = () => {
     return (
         <div>
             <Navbar></Navbar>
-            this is layout
             <Outlet></Outlet>
             <Footer></Footer>
         </div>
