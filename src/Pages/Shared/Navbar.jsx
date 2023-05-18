@@ -5,8 +5,8 @@ const Navbar = () => {
     const navItems = <>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/allToys">All Toys</Link></li>
-        <li><Link to="/addToy">Add a Toy</Link></li>
-        <li><Link to="/Blogs">Blogs</Link></li>
+        <li><Link to="/addAToy">Add a Toy</Link></li>
+        <li><Link to="/blogs">Blogs</Link></li>
     </>
     return (
         <div className="navbar bg-base-100">

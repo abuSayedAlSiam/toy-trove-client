@@ -15,8 +15,8 @@ import { EffectCoverflow, Pagination } from "swiper";
 
 const Gallery = () => {
     return (
-      <>
-      <h2 className="text-center md:text-5xl text-xl font-bold mb-5 mt-16">Gallery</h2>
+      <div className="bg-gray-100">
+      
         <div className="md:w-8/12 mx-auto">
          
         <Swiper
@@ -64,7 +64,7 @@ const Gallery = () => {
           </SwiperSlide>
         </Swiper>
       </div>
-          </>
+          </div>
     );
 };
 
