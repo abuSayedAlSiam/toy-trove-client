@@ -1,24 +1,28 @@
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import StarWars from './StarWars';
+import Avengers from './Avengers';
+import Transformers from './Transformers';
 
 const ShopByCategory = () => {
+
     return (
         <div className='md:w-10/12 mx-auto'>
             <Tabs>
                 <TabList>
-                    <Tab>Marvel</Tab>
                     <Tab>Avengers</Tab>
                     <Tab>Transformers</Tab>
+                    <Tab>Star Wars</Tab>
                 </TabList>
 
                 <TabPanel>
-                    <h2>Any content 1</h2>
+                    <Avengers></Avengers>
                 </TabPanel>
                 <TabPanel>
-                    <h2>Any content 2</h2>
+                    <Transformers></Transformers>
                 </TabPanel>
                 <TabPanel>
-                    <h2>Any content 2</h2>
+                    <StarWars></StarWars>
                 </TabPanel>
             </Tabs>
         </div>

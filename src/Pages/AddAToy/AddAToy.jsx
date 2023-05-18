@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../../Providers/AuthProvider';
 
 const AddAToy = () => {
+
+    const {user} = useContext(AuthContext);
+
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -12,6 +16,22 @@ const AddAToy = () => {
         const sellerEmail = form.sellerEmail.value; 
         const availableQuantity = form.availableQuantity.value; 
         const ratings = form.ratings.value; 
+        const toyDetails = form.toyDetails.value;
+
+        console.log(toyName, price, imageUrl, sellerEmail, sellerName, availableQuantity, ratings, toyDetails)
+
+        const toyData = {
+            toyName, price, imageUrl, sellerEmail: user?.email, sellerName, availableQuantity, ratings, toyDetails
+        }
+        // add to server 
+        fetch(`http://localhost:5000/addToy`,{
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            }, body: JSON.stringify(toyData)
+        })
+            .then(res =>res.json())
+            .then(data => console.log(data))
     }
 
     return (
@@ -23,12 +43,12 @@ const AddAToy = () => {
             <div className='flex justify-between gap-4'>
                     <div className="mb-4 w-full">
                         <label className="text-gray-700 font-semibold">Toy Name:</label>
-                        <input type="email" name="toyName" required
+                        <input  type="text" name="toyName" required
                             className="w-full px-3 py-2 mt-1 text-gray-700 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500" />
                     </div>
                     <div className="mb-4 w-full">
                         <label className="text-gray-700 font-semibold">Price:</label>
-                        <input type="email" name="price" required
+                        <input  type="text" name="price" required
                             className="w-full px-3 py-2 mt-1 text-gray-700 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500" />
                     </div>
                 </div>
@@ -41,30 +61,30 @@ const AddAToy = () => {
                 <div className='flex justify-between gap-4'>
                     <div className="mb-4 w-full">
                         <label className="text-gray-700 font-semibold">Seller Name:</label>
-                        <input type="email" name="sellerName" required
+                        <input  type="text" name="sellerName" defaultValue={user?.displayName} required
                             className="w-full px-3 py-2 mt-1 text-gray-700 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500" />
                     </div>
                     <div className="mb-4 w-full">
                         <label className="text-gray-700 font-semibold">Seller Email:</label>
-                        <input type="email" name="sellerEmail" required
+                        <input  type="email" name="sellerEmail" defaultValue={user?.email} required
                             className="w-full px-3 py-2 mt-1 text-gray-700 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500" />
                     </div>
                 </div>
                 <div className='flex justify-between gap-4'>
                     <div className="mb-4 w-full">
                         <label className="text-gray-700 font-semibold">Available Quantity:</label>
-                        <input type="email" name="availableQuantity" required
+                        <input  type="text" name="availableQuantity" required
                             className="w-full px-3 py-2 mt-1 text-gray-700 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500" />
                     </div>
                     <div className="mb-4 w-full">
                         <label className="text-gray-700 font-semibold">Ratings:</label>
-                        <input type="ratings" name="sellerEmail" required
+                        <input type="ratings" name="ratings" required
                             className="w-full px-3 py-2 mt-1 text-gray-700 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500" />
                     </div>
                 </div>
                 <div className="mb-4">
                     <label className="text-gray-700 font-semibold">Toy Details:</label>
-                    <textarea type="text"   name="details" required
+                    <textarea type="text"   name="toyDetails" required
                         className="w-full h-auto px-3 py-2 mt-1 text-gray-700 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500" />
                 </div>
 

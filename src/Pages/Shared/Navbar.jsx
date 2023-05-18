@@ -10,6 +10,7 @@ const Navbar = () => {
         <li><Link to="/">Home</Link></li>
         <li><Link to="/allToys">All Toys</Link></li>
         <li><Link to="/addAToy">Add a Toy</Link></li>
+        {user && <li><Link to="/myToys">My Toys</Link></li>}
         <li><Link to="/blogs">Blogs</Link></li>
     </>
 
