@@ -51,7 +51,7 @@ const AddAToy = () => {
         const handleSwalFireWithUpdate = () => {
 
             // add to server 
-            fetch(`http://localhost:5000/addToy`, {
+            fetch(`https://toy-trove-server.vercel.app/addToy`, {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -79,7 +79,7 @@ const AddAToy = () => {
             {/* all code here  */}
 
             <form onSubmit={handleSubmit} className="w-9/12 mx-auto p-4 bg-gray-100 shadow-md rounded-md">
-                <div className='flex justify-between gap-4'>
+                <div className='md:flex justify-between gap-4'>
                     <div className="mb-4 w-full">
                         <label className="text-gray-700 font-semibold">Toy Name:</label>
                         <input type="text" name="toyName" required
@@ -97,7 +97,7 @@ const AddAToy = () => {
                         className="w-full px-3 py-2 mt-1 text-gray-700 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500" />
                 </div>
 
-                <div className='flex justify-between gap-4'>
+                <div className='md:flex justify-between gap-4'>
                     <div className="mb-4 w-full">
                         <label className="text-gray-700 font-semibold">Seller Name:</label>
                         <input type="text" name="sellerName" defaultValue={user?.displayName} required
@@ -109,7 +109,7 @@ const AddAToy = () => {
                             className="w-full px-3 py-2 mt-1 text-gray-700 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500" />
                     </div>
                 </div>
-                <div className='flex justify-between gap-4'>
+                <div className='md:flex justify-between gap-4'>
                     <div className="mb-4 w-full">
                         <label className="text-gray-700 font-semibold">Sub CAtegory:</label>
                         <input type="text" name="subCategory" required

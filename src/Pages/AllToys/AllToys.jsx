@@ -11,7 +11,7 @@ const AllToys = () => {
     useEffect(() => {
         const fetchToys = async () => {
             try {
-                const response = await fetch(`http://localhost:5000/allToys?limit=${limit}&toyName=${searchText}`);
+                const response = await fetch(`https://toy-trove-server.vercel.app/allToys?limit=${limit}&toyName=${searchText}`);
                 const data = await response.json();
                 setAllToys(data);
             } catch (error) {
@@ -38,7 +38,7 @@ const AllToys = () => {
                 <div>
                     <h2 className='text-xl md:text-4xl mt-4 font-bold text-center text-primary'>All Toys</h2>
                 </div>
-                <form onSubmit={handleSearch} className=" w-3/12 ml-auto mb-4">
+                <form onSubmit={handleSearch} className="w-10/12 md:w-3/12 md:ml-auto mx-auto mb-4">
                     <label className="label">
                       Input the same name to search
                     </label>
@@ -51,7 +51,7 @@ const AllToys = () => {
                     </div>
                 </form>
             </div>
-            <div className='grid grid-cols-4 gap-4 md:w-11/12 mx-auto'>
+            <div className='md:grid grid-cols-4 gap-4 md:w-11/12 mx-auto'>
                 {
                     allToys.map(toy => <ToyCard key={toy._id} toy={toy} />)
                 }

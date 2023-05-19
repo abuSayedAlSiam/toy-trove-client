@@ -11,7 +11,7 @@ const MyToys = () => {
   const [sortOrder, setSortOrder] = useState('ascending');
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myToys?email=${user?.email}&sortOrder=${sortOrder}`)
+    fetch(`https://toy-trove-server.vercel.app/myToys?email=${user?.email}&sortOrder=${sortOrder}`)
       .then(res => res.json())
       .then(data => setToys(data))
   }, [user?.email, toys, sortOrder]);
@@ -34,7 +34,7 @@ const MyToys = () => {
   };
 
   const handleSwalFireWithUpdate = (id, toyName) => {
-    fetch(`http://localhost:5000/myToyList/${id}`, {
+    fetch(`https://toy-trove-server.vercel.app/myToyList/${id}`, {
       method: 'DELETE'
     })
       .then(res => res.json())

@@ -5,7 +5,7 @@ const Avengers = () => {
     const [toys, setToys] = useState([]);
 
     useEffect(()=>{
-        fetch('http://localhost:5000/allToys/Avengers')
+        fetch('https://toy-trove-server.vercel.app/allToys/Avengers')
             .then(res => res.json())
             .then(data => setToys(data))
     } ,[setToys])

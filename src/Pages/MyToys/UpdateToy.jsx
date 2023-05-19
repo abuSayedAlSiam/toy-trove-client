@@ -46,7 +46,7 @@ const UpdateToy = () => {
         // update to the server 
         const handleSwalFireWithUpdate = () => {
 
-            fetch(`http://localhost:5000/updateToy/${_id}`, {
+            fetch(`https://toy-trove-server.vercel.app/updateToy/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json'

@@ -32,7 +32,7 @@ const router = createBrowserRouter([
         {
           path: "toy/:id",
           element: <PrivateRoute><Toy></Toy></PrivateRoute>,
-          loader: ({params}) => fetch(`http://localhost:5000/toy/${params.id}`)
+          loader: ({params}) => fetch(`https://toy-trove-server.vercel.app/toy/${params.id}`)
         },
         {
           path: "addAToy",
@@ -45,7 +45,7 @@ const router = createBrowserRouter([
         {
           path: "updateToy/:id",
           element: <PrivateRoute><UpdateToy></UpdateToy></PrivateRoute>,
-          loader: ({params}) => fetch(`http://localhost:5000/toy/${params.id}`)
+          loader: ({params}) => fetch(`https://toy-trove-server.vercel.app/toy/${params.id}`)
         },
         {
           path: "blogs",
