@@ -10,6 +10,7 @@ import Login from "../Pages/Login/Login";
 import Register from "../../Register/Register";
 import Toy from "../Pages/Toy/Toy";
 import MyToys from "../Pages/MyToys/MyToys";
+import UpdateToy from "../Pages/MyToys/UpdateToy";
 
 
 const router = createBrowserRouter([
@@ -38,6 +39,11 @@ const router = createBrowserRouter([
         {
           path: "myToys",
           element: <MyToys></MyToys>
+        },
+        {
+          path: "updateToy/:id",
+          element: <UpdateToy></UpdateToy>,
+          loader: ({params}) => fetch(`http://localhost:5000/toy/${params.id}`)
         },
         {
           path: "blogs",

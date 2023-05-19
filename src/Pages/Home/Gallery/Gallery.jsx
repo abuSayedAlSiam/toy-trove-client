@@ -14,6 +14,7 @@ import { EffectCoverflow, Pagination } from "swiper";
 
 
 const Gallery = () => {
+  
     return (
       <div className="bg-gray-100">
       
