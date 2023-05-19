@@ -5,13 +5,12 @@ const ToyRow = ({ toy, handleDelete }) => {
     const { _id, toyName, subCategory, sellerName, price, availableQuantity, picture } = toy || "";
 
 
-
     return (
         <tr>
             <td>
                 <div className="flex items-center space-x-3">
                     <div className="avatar">
-                        <div className="mask mask-squircle w-12 h-12">
+                        <div className="mask mask-circle w-12 h-12">
                             <img src={picture} />
                         </div>
                     </div>

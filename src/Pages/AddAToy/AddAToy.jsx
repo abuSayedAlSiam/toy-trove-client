@@ -11,7 +11,7 @@ const AddAToy = () => {
         const form = event.target;
         const toyName = form.toyName.value;
         const price = form.price.value; 
-        const imageUrl = form.imageUrl.value; 
+        const picture = form.picture.value; 
         const sellerName = form.sellerName.value; 
         const sellerEmail = form.sellerEmail.value; 
         const availableQuantity = form.availableQuantity.value; 
@@ -19,10 +19,10 @@ const AddAToy = () => {
         const ratings = form.ratings.value; 
         const toyDetails = form.toyDetails.value;
 
-        console.log(toyName, price, imageUrl, sellerEmail, sellerName, availableQuantity, ratings, toyDetails)
+        console.log(toyName, price, picture, sellerEmail, sellerName, availableQuantity, ratings, toyDetails)
 
         const toyData = {
-            toyName, price, imageUrl, sellerEmail: user?.email, sellerName, availableQuantity, subCategory, ratings, toyDetails
+            toyName, price, picture, sellerEmail: user?.email, sellerName, availableQuantity, subCategory, ratings, toyDetails
         }
         // add to server 
         fetch(`http://localhost:5000/addToy`,{
@@ -54,8 +54,8 @@ const AddAToy = () => {
                     </div>
                 </div>
                 <div className="mb-4">
-                    <label className="text-gray-700 font-semibold">Image URL:</label>
-                    <input type="text"   name="imageUrl" required
+                    <label className="text-gray-700 font-semibold">Picture URL:</label>
+                    <input type="text"   name="picture" required
                         className="w-full px-3 py-2 mt-1 text-gray-700 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500" />
                 </div>
 
