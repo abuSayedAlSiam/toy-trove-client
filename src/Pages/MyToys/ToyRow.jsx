@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FaPencilAlt } from "react-icons/fa";
 
 const ToyRow = ({ toy, handleDelete }) => {
     const { _id, toyName, subCategory, sellerName, price, availableQuantity, picture } = toy || "";
@@ -25,9 +26,9 @@ const ToyRow = ({ toy, handleDelete }) => {
             <td>{sellerName}</td>
             <th>
                 <Link to={`/updateToy/${_id}`}>
-                    <button className="btn btn-success mr-3 btn-xs">Update</button>
+                    <button className="btn btn-success rounded-full btn-outline mr-3 btn-xs"><FaPencilAlt></FaPencilAlt> Edit </button>
                 </Link>
-                <button onClick={() => handleDelete(_id)} className="btn btn-error btn-xs">Delete</button>
+                <button onClick={() => handleDelete(_id)} className="btn btn-error btn-xs">X Delete</button>
             </th>
         </tr>
     );

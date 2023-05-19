@@ -39,7 +39,16 @@ const Login = () => {
     }
 
     const handleGoogleLogin = () => {
-        googleSignIn();
+        googleSignIn()
+        .then((result) => {
+            const user = result.user;
+            navigate(from, { replace: true });
+            setSuccess("User Login successfully");
+            toast.success("User Login successfully");
+          })
+          .catch((error) => {
+            setError(error.message);
+          });
     }
 
     return (

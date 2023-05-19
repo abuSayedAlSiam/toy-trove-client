@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Providers/AuthProvider';
 import ToyRow from './ToyRow';
 import UseTitle from '../../Hooks/UseTitle';
+import Swal from 'sweetalert2';
 
 const MyToys = () => {
   UseTitle('My Toys');
@@ -16,19 +17,49 @@ const MyToys = () => {
   }, [toys, user])
 
   // handle delete button 
+
+
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/myToyList/${id}`, {
-      method: 'DELETE'
+    // validate 
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You want to Delete this toy",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#50C878',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, Delete Product!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        handleSwalFireWithUpdate()
+        form.reset();
+       
+
+      }
+      else { return }
     })
-      .then(res => res.json())
-      .then(data => {
-        console.log(data)
-        if (data) {
-          const remaining = toys.filter(ty => ty._id !== id);
-          setToys(remaining)
-         
-        }
+
+    const handleSwalFireWithUpdate = () => {
+
+      fetch(`http://localhost:5000/myToyList/${id}`, {
+        method: 'DELETE'
       })
+        .then(res => res.json())
+        .then(data => {
+          console.log(data)
+          if (data) {
+            const remaining = toys.filter(ty => ty._id !== id);
+            setToys(remaining)
+          }
+          if(data.modifiedCount >0){
+            Swal.fire(
+              `${toyName} Deleted Successful!`,
+              'Your toy has been deleted',
+              'success'
+            )
+          }
+        })
+    }
   };
 
   return (
