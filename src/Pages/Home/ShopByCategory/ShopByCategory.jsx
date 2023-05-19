@@ -7,7 +7,7 @@ import Transformers from './Transformers';
 const ShopByCategory = () => {
 
     return (
-        <div className='md:w-10/12 mx-auto'>
+        <div className='md:w-10/12 h-96 mx-auto'>
             <Tabs>
                 <TabList>
                     <Tab>Avengers</Tab>

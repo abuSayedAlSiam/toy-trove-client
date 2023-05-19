@@ -11,7 +11,7 @@ const MyToys = () => {
     fetch(`http://localhost:5000/myToys?email=${user?.email}`)
       .then(res => res.json())
       .then(data => setToys(data))
-  }, [toys])
+  }, [toys, user])
 
   // handle delete button 
   const handleDelete = (id) => {
@@ -31,6 +31,7 @@ const MyToys = () => {
 
   return (
     <div>
+      <h2>My Toys</h2>
       <div className="overflow-x-auto w-full">
         <table className="table w-full">
           {/* head */}
