@@ -2,9 +2,11 @@ import { useContext } from "react";
 import Banner from "../Banner/Banner";
 import Gallery from "../Gallery/Gallery";
 import ShopByCategory from "../ShopByCategory/ShopByCategory";
+import UseTitle from "../../../Hooks/UseTitle";
 
 
 const Home = () => {
+    UseTitle('Home');
     
     return (
         <div>

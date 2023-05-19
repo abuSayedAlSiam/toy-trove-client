@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import ToyCard from './toyCard';
+import UseTitle from '../../Hooks/UseTitle';
 
 
 const AllToys = () => {
+    UseTitle('All Toys');
     const [allToys, setAllToys] = useState([]);
     const [limit, setLimit] = useState(20);
     useEffect(()=> {

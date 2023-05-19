@@ -2,10 +2,13 @@ import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { toast } from "react-toastify";
+import UseTitle from "../../Hooks/UseTitle";
+import { FaGoogle } from "react-icons/fa";
 
 
 const Login = () => {
-    const {haneleLogIn} = useContext(AuthContext);
+    UseTitle('Login')
+    const {haneleLogIn, googleSignIn} = useContext(AuthContext);
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
 
@@ -33,6 +36,10 @@ const Login = () => {
           })
           .catch((error) => setError(error.message));
         console.log(email, password)
+    }
+
+    const handleGoogleLogin = () => {
+        googleSignIn();
     }
 
     return (
@@ -80,6 +87,8 @@ const Login = () => {
                         Register
                     </Link>
                 </div>
+                <div className="divider">OR</div>
+                <button onClick={()=>handleGoogleLogin()} className="btn btn-black w-full btn-outline"><span className="mr-4 text-red-600"><FaGoogle /></span> Log in with Google</button>
                 <div className='mt-4'>
                     <p className='text-red-400 text-center'>{error}</p>
                     <p className='text-green-400 text-center' >{success}</p>
