@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { toast } from "react-toastify";
 
@@ -8,6 +8,12 @@ const Login = () => {
     const {haneleLogIn} = useContext(AuthContext);
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
+
+    const location = useLocation();
+    const navigate = useNavigate();
+    const from = location.state?.from?.pathname || '/';
+    console.log(from);
+
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -20,6 +26,8 @@ const Login = () => {
             const loggedUser = result.user;
             console.log(loggedUser);
             event.target.reset();
+            navigate(from, {replace: true})
+
             setSuccess("User Login successfully");
             toast.success("User Login successfully");
           })
