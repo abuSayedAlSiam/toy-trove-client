@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const ToyCard = ({ toy }) => {
     const { _id, toyName, subCategory, price, availableQuantity, picture } = toy || "";
-    console.log(toy);
+    // console.log(toy);
     return (
         <div className="card bg-base-100 shadow-xl">
             <figure>

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "/toy-trove.png"
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
@@ -7,18 +7,19 @@ const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
 
     const navItems = <>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/allToys">All Toys</Link></li>
-        <li><Link to="/addAToy">Add a Toy</Link></li>
-        {user && <li><Link to="/myToys">My Toys</Link></li>}
-        <li><Link to="/blogs">Blogs</Link></li>
+        <li><NavLink to="/">Home</NavLink></li>
+        <li><NavLink to="/allToys">All Toys</NavLink></li>
+        {user && <>
+        <li><NavLink to="/addAToy">Add a Toy</NavLink></li>
+         <li><NavLink to="/myToys">My Toys</NavLink></li> </>}
+        <li><NavLink to="/blogs">Blogs</NavLink></li>
     </>
 
     const handleLogout = () => {
         logOut();
     }
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-base-100 shadow-md shadow-sky-200">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">

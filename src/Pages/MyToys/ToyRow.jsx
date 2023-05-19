@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { FaPencilAlt } from "react-icons/fa";
 
 const ToyRow = ({ toy, handleDelete }) => {
-    const { _id, toyName, subCategory, sellerName, price, availableQuantity, picture } = toy || "";
+    const { _id, toyName, subCategory, sellerName, sellerEmail, price, availableQuantity, picture } = toy || "";
 
 
     return (
@@ -22,8 +22,9 @@ const ToyRow = ({ toy, handleDelete }) => {
                 </div>
             </td>
             <td>{price}$</td>
-            <td>{availableQuantity}</td>
+            <td>{sellerEmail}</td>
             <td>{sellerName}</td>
+            <td>{availableQuantity}</td>
             <th>
                 <Link to={`/updateToy/${_id}`}>
                     <button className="btn btn-success rounded-full btn-outline mr-3 btn-xs"><FaPencilAlt></FaPencilAlt> Edit </button>

@@ -10,7 +10,11 @@ const PrivateRoute = ({children}) => {
     const location = useLocation();
 
     if(loading){
-        return <p className="text-xl text-conter">Loading...</p>
+        return <div className="w-3/12 mx-auto mt-20"> <progress className="progress progress-info w-56" value="0" max="100"></progress>
+        <progress className="progress progress-info w-56" value="10" max="100"></progress>
+        <progress className="progress progress-info w-56" value="40" max="100"></progress>
+        <progress className="progress progress-info w-56" value="70" max="100"></progress>
+        <progress className="progress progress-info w-56" value="100" max="100"></progress></div>
     }
 
    if(user){

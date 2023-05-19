@@ -38,28 +38,28 @@ const Gallery = () => {
           className="mySwiper"
           >
           <SwiperSlide>
-            <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+            <img  style={{height: "300px"}} className="overflow-hidden" src="https://m.media-amazon.com/images/I/81UDnYzKbXL._AC_SX569_.jpg" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+            <img style={{height: "300px"}} src="https://m.media-amazon.com/images/I/91aTd-k35qL._AC_SX569_.jpg" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+            <img src="https://m.media-amazon.com/images/I/91g0lpKJpzL._AC_SX569_.jpg" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+            <img src="https://m.media-amazon.com/images/I/81DNODTjH3L._AC_SX569_.jpg" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+            <img src="https://m.media-amazon.com/images/I/81AVQ-ZJjXL._AC_SX569_.jpg" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+            <img src="https://m.media-amazon.com/images/I/812RBsQfxtL._AC_SX569_.jpg" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+            <img src="https://m.media-amazon.com/images/I/81uwk+ags9L._AC_SX569_.jpg" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+            <img src="https://m.media-amazon.com/images/I/8120QLDtd-L._AC_UL320_.jpg" />
           </SwiperSlide>
         </Swiper>
       </div>

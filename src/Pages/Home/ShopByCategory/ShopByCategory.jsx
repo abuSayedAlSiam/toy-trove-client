@@ -5,15 +5,31 @@ import Avengers from './Avengers';
 import Transformers from './Transformers';
 
 const ShopByCategory = () => {
-    
+
     return (
-        <div className='md:w-10/12 h-96 mx-auto'>
+        <div className='md:w-10/12 h-96 mb-40  mx-auto'>
             <Tabs>
-                <TabList>
-                    <Tab>Avengers</Tab>
-                    <Tab>Transformers</Tab>
-                    <Tab>Star Wars</Tab>
+                <TabList className='flex justify-center bg-gray-200 p-4 mb-3'>
+                    <Tab
+                        className='px-4 py-2 rounded-md mr-2'
+                        selectedClassName='bg-sky text-sky-400 '
+                    >
+                        Avengers
+                    </Tab>
+                    <Tab
+                        className='px-4 py-2 rounded-md mr-2'
+                        selectedClassName='bg-sky text-sky-400 '
+                    >
+                        Transformers
+                    </Tab>
+                    <Tab
+                        className='px-4 py-2 rounded-md mr-2'
+                        selectedClassName='bg-sky text-sky-400 '
+                    >
+                        Star Wars
+                    </Tab>
                 </TabList>
+
 
                 <TabPanel>
                     <Avengers></Avengers>

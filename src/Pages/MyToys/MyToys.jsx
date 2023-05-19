@@ -8,22 +8,19 @@ const MyToys = () => {
   UseTitle('My Toys');
   const [toys, setToys] = useState([]);
   const { user } = useContext(AuthContext);
-
+  const [sortOrder, setSortOrder] = useState('ascending');
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myToys?email=${user?.email}`)
+    fetch(`http://localhost:5000/myToys?email=${user?.email}&sortOrder=${sortOrder}`)
       .then(res => res.json())
       .then(data => setToys(data))
-  }, [toys, user])
+  }, [user?.email, toys, sortOrder]);
 
-  // handle delete button 
-
-
-  const handleDelete = (id) => {
-    // validate 
+  // handle delete button
+  const handleDelete = (id, toyName) => {
     Swal.fire({
       title: 'Are you sure?',
-      text: "You want to Delete this toy",
+      text: "You want to delete this toy",
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#50C878',
@@ -31,63 +28,63 @@ const MyToys = () => {
       confirmButtonText: 'Yes, Delete Product!'
     }).then((result) => {
       if (result.isConfirmed) {
-        handleSwalFireWithUpdate()
-        form.reset();
-       
-
+        handleSwalFireWithUpdate(id, toyName);
       }
-      else { return }
+    });
+  };
+
+  const handleSwalFireWithUpdate = (id, toyName) => {
+    fetch(`http://localhost:5000/myToyList/${id}`, {
+      method: 'DELETE'
     })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        if (data && data.modifiedCount > 0) {
+          const remaining = toys.filter(ty => ty._id !== id);
+          setToys(remaining);
+          Swal.fire(
+            `${toyName} Deleted Successfully!`,
+            'Your toy has been deleted',
+            'success'
+          );
+        }
+      });
+  };
 
-    const handleSwalFireWithUpdate = () => {
-
-      fetch(`http://localhost:5000/myToyList/${id}`, {
-        method: 'DELETE'
-      })
-        .then(res => res.json())
-        .then(data => {
-          console.log(data)
-          if (data) {
-            const remaining = toys.filter(ty => ty._id !== id);
-            setToys(remaining)
-          }
-          if(data.modifiedCount >0){
-            Swal.fire(
-              `${toyName} Deleted Successful!`,
-              'Your toy has been deleted',
-              'success'
-            )
-          }
-        })
-    }
+  const handleSortOrderChange = (e) => {
+    setSortOrder(e.target.value);
   };
 
   return (
-    <div>
-      <h2>My Toys</h2>
+    <div className='w-11/12 mx-auto'>
+      <h2 className='text-center text-primary text-4xl font-bold mt-3 mb-8'>My Toys</h2>
+      <div className="flex items-center justify-end gap-4 mr-4 mb-2">
+        <p className="">Sort Order by Price</p>
+        <select className="select select-bordered w-max" value={sortOrder} onChange={handleSortOrderChange}>
+          <option value="ascending">Ascending</option>
+          <option value="descending">Descending</option>
+        </select>
+      </div>
       <div className="overflow-x-auto w-full">
         <table className="table w-full">
-          {/* head */}
           <thead>
             <tr>
               <th>Toy</th>
               <th>Price</th>
-              <th>Available Quantity</th>
+              <th>Seller Email</th>
               <th>Seller</th>
-              <th>Action</th>
+              <th>Available Quantity</th>
+              <th>Edit / Delete</th>
             </tr>
           </thead>
           <tbody>
-            {
-              toys?.map(toy => <ToyRow key={toy._id} toy={toy} handleDelete={handleDelete}></ToyRow>)
-            }
-
+            {toys.map(toy => (
+              <ToyRow key={toy._id} toy={toy} handleDelete={handleDelete} />
+            ))}
           </tbody>
-
-
         </table>
       </div>
-
     </div>
   );
 };
