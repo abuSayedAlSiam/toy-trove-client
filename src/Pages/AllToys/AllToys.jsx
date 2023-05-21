@@ -14,7 +14,7 @@ const AllToys = () => {
     useEffect(() => {
         const fetchToys = async () => {
             try {
-                const response = await fetch(`http://localhost:5000/allToys?limit=${limit}&toyName=${searchText}`);
+                const response = await fetch(`https://toy-trove-server.vercel.app/allToys?limit=${limit}&toyName=${searchText}`);
                 const data = await response.json();
                 setAllToys(data);
                 setLoader(false);
@@ -57,7 +57,6 @@ const AllToys = () => {
             <div>
                 <div className="overflow-x-auto w-full">
                     <table className="table w-full text-center">
-
                         {/* head */}
                         <thead>
                             <tr>
@@ -74,21 +73,17 @@ const AllToys = () => {
 
                         <tbody>
                             {/* row  */}
-
-
                             {
                                 allToys.map((toy, index) => <Row key={toy._id} index={index} toy={toy}></Row>)
                             }
                         </tbody>
-
-
                     </table>
                     <div hidden={!loader} className='w-1/12 mx-auto my-10'>
                         <HashLoader color="#00d9ff" />
                     </div>
                 </div>
             </div>
-            <div hidden={!limit} className='w-1/12 mx-auto mt-4'>
+            <div hidden={!limit} className='w-32 md:w-1/12 mx-auto mt-4'>
                 <button onClick={handleLimit} className='btn mx-auto'>See All</button>
             </div>
         </div>

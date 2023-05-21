@@ -86,7 +86,7 @@ const Login = () => {
                         />
                     </div>
                     <button
-                        className="btn btn-primary w-full"
+                        className="btn btn-primary w-full text-white"
                         type="submit"
                     >
                         Log In

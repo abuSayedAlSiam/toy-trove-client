@@ -73,11 +73,11 @@ const UpdateToy = () => {
     }
 
     return (
-        <div className='w-10/12 mx-auto'>
+        <div className='w-11/12 md:w-10/12 mx-auto mb-10'>
             <h2 className='text-center text-4xl font-bold mt-3 mb-8'>Update Toy <span className='text-primary'>({toyName})</span></h2>
             {/* all code here  */}
 
-            <form onSubmit={handleSubmit} className="w-8/12 mx-auto py-8 px-16 bg-gray-100 shadow-md rounded-md">
+            <form onSubmit={handleSubmit} className="w-full md:w-8/12 mx-auto py-8 px-8 md:px-16 bg-gray-100 shadow-md rounded-md">
 
                 <div className="mb-4 w-full">
                     <label className="text-gray-700 font-semibold">Price:</label>
@@ -86,7 +86,7 @@ const UpdateToy = () => {
                 </div>
                 <div className="mb-4">
                     <label className="text-gray-700 font-semibold">Available Quantity:</label>
-                    <input type="text" name="picture" defaultValue={availableQuantity} required
+                    <input type="text" name="availableQuantity" defaultValue={availableQuantity} required
                         className="w-full px-3 py-2 mt-1 text-gray-700 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500" />
                 </div>
                 <div className="mb-4">

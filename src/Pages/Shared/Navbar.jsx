@@ -6,14 +6,24 @@ import { AuthContext } from "../../Providers/AuthProvider";
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
 
-    const navItems = <>
-        <li><NavLink to="/">Home</NavLink></li>
-        <li><NavLink to="/allToys">All Toys</NavLink></li>
-        {user && <>
-        <li><NavLink to="/addAToy">Add a Toy</NavLink></li>
-         <li><NavLink to="/myToys">My Toys</NavLink></li> </>}
-        <li><NavLink to="/blogs">Blogs</NavLink></li>
-    </>
+    const navItems = (
+        <>
+            <li><NavLink to="/" exact="true"
+                className="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose">Home</NavLink></li>
+            <li><NavLink to="/allToys" exact="true"
+                className="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose">All Toys</NavLink></li>
+            {user && (
+                <>
+                    <li><NavLink to="/addAToy" exact="true"
+                        className="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose">Add a Toy</NavLink></li>
+                    <li><NavLink to="/myToys" exact="true"
+                        className="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose">My Toys</NavLink></li>
+                </>
+            )}
+            <li><NavLink to="/blogs" exact="true"
+                className="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose">Blogs</NavLink></li>
+        </>
+    );
 
     const handleLogout = () => {
         logOut();
@@ -29,7 +39,7 @@ const Navbar = () => {
                         {navItems}
                     </ul>
                 </div>
-                <Link to="/" className="  normal-case text-xl"><img className="h-16" src={logo} alt="Toy Trove" /></Link>
+                <Link to="/"><img className="h-9 md:ml-10" src={logo} alt="Toy Trove" /></Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -37,7 +47,7 @@ const Navbar = () => {
                 </ul>
             </div>
 
-            <div className=" md:mr-10 mr-3 ml-auto">
+            <div className=" md:mx-10 ml-auto mr-1">
 
                 {user ? (
                     <>
@@ -48,13 +58,13 @@ const Navbar = () => {
                                 alt=""
                             />
                         )}
-                        <button onClick={()=>handleLogout()} className="ml-5 btn btn-primary">
+                        <button onClick={() => handleLogout()} className="ml-3 md:ml-5 btn btn-primary text-white">
                             Logout
                         </button>
                     </>
                 ) : (
                     <Link to="/login">
-                        <button className="btn btn-primary">Login</button>
+                        <button className="btn btn-primary text-white">Login</button>
                     </Link>
                 )}
 

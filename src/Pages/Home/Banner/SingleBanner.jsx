@@ -1,9 +1,14 @@
 import React from 'react';
-import logo from "/toy-trove.png"
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+
 
 const SingleBanner = ({ banner }) => {
     const { photo } = banner || "";
+    const navigate = useNavigate();
+
+    const handleExplore = () => {
+        navigate('/allToys');
+    };
     return (
         <div className="relative overflow-hidden">
             <img
@@ -19,11 +24,11 @@ const SingleBanner = ({ banner }) => {
                         Toy Trove
                     </h2>
                     <p className="mx-auto md:text-lg w-5/6">
-                        AWESOME PREORDERS AWAITS
+                    Experience the Ultimate online toy shopping brought to you.
                     </p>
-                    <Link to="/allToys">
-                    <button className='btn btn-primary mt-4'>Explore</button>
-                    </Link>
+                     <button className="btn btn-primary mt-4 text-white" onClick={()=>handleExplore()}>
+                        Explore
+                    </button>
                 </div>
             </div>
         </div>

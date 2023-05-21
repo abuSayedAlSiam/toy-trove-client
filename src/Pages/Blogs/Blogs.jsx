@@ -23,7 +23,7 @@ const Blogs = () => {
     ]
     return (
 
-        <section className="px-20">
+        <section className="px-4 md:px-20">
       <div className="mx-auto max-w-7xl py-10">
         <div className="lg:grid lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-5">

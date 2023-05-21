@@ -42,8 +42,6 @@ const AddAToy = () => {
             if (result.isConfirmed) {
                 handleSwalFireWithUpdate()
                 form.reset();
-               
-
             }
             else { return }
         })
@@ -67,14 +65,13 @@ const AddAToy = () => {
                             'success'
                         )
                     }
-
                 })
                 .catch(err => toast.error(err.message))
         }
     }
 
     return (
-        <div className='w-10/12 mx-auto'>
+        <div className='w-10/12 mx-auto mb-10'>
             <h2 className='text-center text-primary text-4xl font-bold mt-3 mb-8'>Add A New Toy</h2>
             {/* all code here  */}
 

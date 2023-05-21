@@ -31,7 +31,7 @@ const ToyRow = ({ toy, handleDelete }) => {
                 </Link>
                 </th>
                 <th>
-                <button onClick={() => handleDelete(_id)} className="btn btn-error btn-xs">X Delete</button>
+                <button onClick={() => handleDelete(_id)} className="btn btn-error btn-xs">Delete</button>
             </th>
         </tr>
     );

@@ -9,7 +9,7 @@ const MyToys = () => {
   UseTitle('My Toys');
   const [toys, setToys] = useState([]);
   const { user } = useContext(AuthContext);
-  const [sortOrder, setSortOrder] = useState('ascending');
+  const [sortOrder, setSortOrder] = useState('');
   const [loader, setLoader] = useState(true);
 
   useEffect(() => {
@@ -19,7 +19,7 @@ const MyToys = () => {
         setToys(data);
         setLoader(false)
       })
-  }, [user?.email, toys, sortOrder]);
+  }, [user?.email, toys]);
 
   // handle delete button
   const handleDelete = (id, toyName) => {
@@ -67,6 +67,7 @@ const MyToys = () => {
       <div className="flex items-center justify-end gap-4 mr-4 mb-2">
         <p className="">Sort Order by Price</p>
         <select className="select select-bordered w-max" value={sortOrder} onChange={handleSortOrderChange}>
+          <option value="">Default</option>
           <option value="ascending">Ascending</option>
           <option value="descending">Descending</option>
         </select>

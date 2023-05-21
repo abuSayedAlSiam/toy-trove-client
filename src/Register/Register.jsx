@@ -18,7 +18,13 @@ const Register = () => {
         const email = form.email.value;
         const photoUrl = form.photoUrl.value;
         const password = form.password.value;
-        console.log(name, email, password, photoUrl)
+
+        //password validation
+        if(password.length < 6){
+            setError("Password must be at least 6 characters");
+            toast.error("Password must be at least 6 characters");
+            return;
+        }
 
         createUser(email, password)
         .then((result) => {
@@ -98,7 +104,7 @@ const Register = () => {
                         />
                     </div>
                     <button
-                        className="btn btn-primary w-full"
+                        className="btn btn-primary w-full text-white"
                         type="submit"
                     >
                        Register Account

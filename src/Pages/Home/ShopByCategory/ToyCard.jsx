@@ -14,13 +14,13 @@ const ToyCard = ({ toy }) => {
             <div className="card-body items-center text-center">
                 <h2 className="card-title">{toyName}</h2>
                 <p>Category: {subCategory}</p>
-                <p>Price: <span className='font-bold'>{price} $</span></p>
-                <p className="flex gap-1"><Rating
+                <div>Price: <span className='font-bold'>{price} $</span></div>
+                <div className="flex gap-1"><Rating
                             style={{ maxWidth: 100 }}
                             value={rating}
                             readOnly
                         ></Rating>
-                            {rating}</p>
+                            {rating}</div>
                 <div className='w-full'>
                     <Link to={`/toy/${_id}`}>
                         <button className="btn btn-primary text-white w-full">View Details</button>
