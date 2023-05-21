@@ -78,7 +78,7 @@ const AddAToy = () => {
             <h2 className='text-center text-primary text-4xl font-bold mt-3 mb-8'>Add A New Toy</h2>
             {/* all code here  */}
 
-            <form onSubmit={handleSubmit} className="w-9/12 mx-auto p-4 bg-gray-100 shadow-md rounded-md">
+            <form onSubmit={handleSubmit} className="w-11/12 md:w-9/12 mx-auto p-4 bg-gray-100 shadow-md rounded-md">
                 <div className='md:flex justify-between gap-4'>
                     <div className="mb-4 w-full">
                         <label className="text-gray-700 font-semibold">Toy Name:</label>

@@ -6,6 +6,8 @@ import UseTitle from "../../../Hooks/UseTitle";
 import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // Import the CSS file for AOS animations
+import Testimonial from "../Testimonial/Testimonial";
+import Statistics from "../Statistics/Statistics";
 
 
 const Home = () => {
@@ -26,6 +28,8 @@ const Home = () => {
             <Gallery></Gallery>
             <h2 className='text-4xl text-center font-bold  mt-16 mb-10'>Shop By Category</h2>
             <ShopByCategory></ShopByCategory>
+            <Statistics></Statistics>
+            <Testimonial></Testimonial>
         </div>
     );
 };

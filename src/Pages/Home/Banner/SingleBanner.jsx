@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from "/toy-trove.png"
+import { Link } from 'react-router-dom';
 
 const SingleBanner = ({ banner }) => {
     const { photo } = banner || "";
@@ -20,7 +21,9 @@ const SingleBanner = ({ banner }) => {
                     <p className="mx-auto md:text-lg w-5/6">
                         AWESOME PREORDERS AWAITS
                     </p>
+                    <Link to="/allToys">
                     <button className='btn btn-primary mt-4'>Explore</button>
+                    </Link>
                 </div>
             </div>
         </div>

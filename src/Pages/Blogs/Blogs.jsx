@@ -3,6 +3,7 @@ import UseTitle from '../../Hooks/UseTitle';
 
 const Blogs = () => {
     UseTitle('Blogs')
+    // todo 
     return (
         <div  className='my-12 bg-primary mx-12 rounded p-8'>
         <div>

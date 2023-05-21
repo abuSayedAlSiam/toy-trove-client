@@ -7,12 +7,12 @@ import AllToys from "../Pages/AllToys/AllToys";
 import AddAToy from "../Pages/AddAToy/AddAToy";
 import Blogs from "../Pages/Blogs/Blogs";
 import Login from "../Pages/Login/Login";
-import Register from "../../Register/Register";
 import Toy from "../Pages/Toy/Toy";
 import MyToys from "../Pages/MyToys/MyToys";
 import UpdateToy from "../Pages/MyToys/UpdateToy";
 import PrivateRoute from "./PrivateRoute";
 import Error from "../Pages/Error/Error";
+import Register from "../Register/Register";
 
 
 const router = createBrowserRouter([

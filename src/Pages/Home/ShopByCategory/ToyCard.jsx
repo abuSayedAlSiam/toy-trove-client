@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Rating } from "@smastrom/react-rating";
+import "@smastrom/react-rating/style.css";
 
 const ToyCard = ({ toy }) => {
-    const { _id, toyName, subCategory, price, availableQuantity, picture } = toy || "";
+    const { _id, rating, toyName, subCategory, price, availableQuantity, picture } = toy || "";
     // console.log(toy);
     return (
         <div className="card bg-base-100 shadow-xl">
@@ -13,7 +15,12 @@ const ToyCard = ({ toy }) => {
                 <h2 className="card-title">{toyName}</h2>
                 <p>Category: {subCategory}</p>
                 <p>Price: <span className='font-bold'>{price} $</span></p>
-                <p>Available Quantity: {availableQuantity}</p>
+                <p className="flex gap-1"><Rating
+                            style={{ maxWidth: 100 }}
+                            value={rating}
+                            readOnly
+                        ></Rating>
+                            {rating}</p>
                 <div className='w-full'>
                     <Link to={`/toy/${_id}`}>
                         <button className="btn btn-primary text-white w-full">View Details</button>

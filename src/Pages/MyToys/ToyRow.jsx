@@ -24,11 +24,13 @@ const ToyRow = ({ toy, handleDelete }) => {
             <td>{price}$</td>
             <td>{sellerEmail}</td>
             <td>{sellerName}</td>
-            <td>{availableQuantity}</td>
+            <td>{availableQuantity} items in stock</td>
             <th>
                 <Link to={`/updateToy/${_id}`}>
                     <button className="btn btn-success rounded-full btn-outline mr-3 btn-xs"><FaPencilAlt></FaPencilAlt> Edit </button>
                 </Link>
+                </th>
+                <th>
                 <button onClick={() => handleDelete(_id)} className="btn btn-error btn-xs">X Delete</button>
             </th>
         </tr>

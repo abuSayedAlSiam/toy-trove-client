@@ -1,10 +1,8 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { AuthContext } from '../src/Providers/AuthProvider';
+import { AuthContext } from '../Providers/AuthProvider';
 import { toast } from 'react-toastify';
 import { updateProfile } from 'firebase/auth';
-
-
 
 const Register = () => {
     const {createUser} = useContext(AuthContext)
@@ -38,7 +36,7 @@ const Register = () => {
           })
           .catch((error) => {
             setError(error.message);
-            toast.error(error.message)
+            toast.error("Something went wrong!")
           });
             
     
@@ -58,6 +56,7 @@ const Register = () => {
                               className="input input-primary w-full"
                             type="text"
                             name="name"
+                            required
                         />
                     </div>
                     <div className="mb-4">
@@ -82,6 +81,7 @@ const Register = () => {
                               className="input input-primary w-full"
                             type="email"
                             name="email"
+                            required
                         />
                     </div>
                     <div className="mb-6">
@@ -94,6 +94,7 @@ const Register = () => {
                             className="input input-primary w-full"
                             type="password"
                             name="password"
+                            required
                         />
                     </div>
                     <button

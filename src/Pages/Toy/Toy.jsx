@@ -11,7 +11,7 @@ const Toy = () => {
     return (
         <div>
             <div className="card lg:card-side w-10/12 mx-auto mt-5 p-4 bg-base-100 shadow-xl">
-                <figure className="w-8/12"><img src={picture} alt="Album" /></figure>
+                <figure className="w-5/12"><img src={picture} alt="Album" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">{toyName}</h2>
                     <p>{details}</p>
@@ -22,13 +22,12 @@ const Toy = () => {
                     </div>
                     <div className="flex ">
                         <p className="font-bold">Price: {price}$</p>
-                        {/* todo  */}
-                        <p className="flex gap-1"><Rating
+                        <div className="flex gap-1"><Rating
                             style={{ maxWidth: 100 }}
                             value={rating}
                             readOnly
                         ></Rating>
-                            {rating}</p>
+                            {rating}</div>
                     </div>
                     <div className="">
                         <p></p>

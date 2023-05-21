@@ -17,6 +17,7 @@ const Login = () => {
     const from = location.state?.from?.pathname || '/';
     console.log(from);
 
+    
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -34,7 +35,10 @@ const Login = () => {
             setSuccess("User Login successfully");
             toast.success("User Login successfully");
           })
-          .catch((error) => setError(error.message));
+          .catch((error) => {
+            setError(error.message)
+            toast.error("Something went wrong!")
+          });
         console.log(email, password)
     }
 
@@ -48,6 +52,7 @@ const Login = () => {
           })
           .catch((error) => {
             setError(error.message);
+            toast.error("Something went wrong!")
           });
     }
 

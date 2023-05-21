@@ -3,17 +3,22 @@ import { AuthContext } from '../../Providers/AuthProvider';
 import ToyRow from './ToyRow';
 import UseTitle from '../../Hooks/UseTitle';
 import Swal from 'sweetalert2';
+import HashLoader from 'react-spinners/HashLoader';
 
 const MyToys = () => {
   UseTitle('My Toys');
   const [toys, setToys] = useState([]);
   const { user } = useContext(AuthContext);
   const [sortOrder, setSortOrder] = useState('ascending');
+  const [loader, setLoader] = useState(true);
 
   useEffect(() => {
     fetch(`https://toy-trove-server.vercel.app/myToys?email=${user?.email}&sortOrder=${sortOrder}`)
       .then(res => res.json())
-      .then(data => setToys(data))
+      .then(data => {
+        setToys(data);
+        setLoader(false)
+      })
   }, [user?.email, toys, sortOrder]);
 
   // handle delete button
@@ -75,7 +80,8 @@ const MyToys = () => {
               <th>Seller Email</th>
               <th>Seller</th>
               <th>Available Quantity</th>
-              <th>Edit / Delete</th>
+              <th>Edit</th>
+              <th>Delete</th>
             </tr>
           </thead>
           <tbody>
@@ -84,6 +90,9 @@ const MyToys = () => {
             ))}
           </tbody>
         </table>
+        <div hidden={!loader} className='w-1/12 mx-auto my-10'>
+          <HashLoader color="#00d9ff" />
+        </div>
       </div>
     </div>
   );
