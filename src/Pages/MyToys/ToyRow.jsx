@@ -27,7 +27,7 @@ const ToyRow = ({ toy, handleDelete }) => {
             <td>{availableQuantity} items in stock</td>
             <th>
                 <Link to={`/updateToy/${_id}`}>
-                    <button className="btn btn-success rounded-full btn-outline mr-3 btn-xs"><FaPencilAlt></FaPencilAlt> Edit </button>
+                    <button className="btn btn-success rounded-full btn-outline mr-3 btn-xs"><FaPencilAlt></FaPencilAlt> Update </button>
                 </Link>
                 </th>
                 <th>
