@@ -31,7 +31,7 @@ const AllToys = () => {
     };
 
     const handleSearch = () => {
-
+        setSearchText(searchText)
     };
 
 
