@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 import { Navigate, useLocation } from "react-router-dom";
-import { toast } from "react-toastify";
 import Swal from "sweetalert2";
 import HashLoader from 'react-spinners/HashLoader';
 

@@ -41,13 +41,13 @@ const Navbar = () => {
                 </div>
                 <Link to="/"><img className="h-9 md:ml-10" src={logo} alt="Toy Trove" /></Link>
             </div>
-            <div className="navbar-center hidden lg:flex">
+            <div className="navbar-end hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
                     {navItems}
                 </ul>
             </div>
 
-            <div className=" md:mx-10 ml-auto mr-1">
+            <div className="md:mx-10 ml-auto mr-1">
 
                 {user ? (
                     <>

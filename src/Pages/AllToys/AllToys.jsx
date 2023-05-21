@@ -83,7 +83,7 @@ const AllToys = () => {
                     </div>
                 </div>
             </div>
-            <div hidden={!limit} className='w-32 md:w-1/12 mx-auto mt-4'>
+            <div hidden={limit == 0 || allToys.length < limit} className='w-32 md:w-1/12 mx-auto mt-4'>
                 <button onClick={handleLimit} className='btn mx-auto'>See All</button>
             </div>
         </div>
